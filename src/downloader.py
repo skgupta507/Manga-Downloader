@@ -34,7 +34,10 @@ class Mangadex:
 			return True
 			
 		except Exception:
-			os.remove(os.path.join("tmp", f"{self.id}.pdf"))
+			try:
+				os.remove(os.path.join("tmp", f"{self.id}.pdf"))
+			except FileNotFoundError:
+				print("The given ID was invalid.")
 			return False
 
 
