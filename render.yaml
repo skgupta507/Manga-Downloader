@@ -1,0 +1,12 @@
+# Exported from Render on 2024-03-26T02:41:51Z
+services:
+- type: web
+  name: Manga-Downloader
+  runtime: python
+  repo: https://github.com/real-zephex/Manga-Downloader
+  branch: main
+  plan: free
+  region: singapore
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn main:app
+version: "1"
